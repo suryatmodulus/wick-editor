@@ -29,7 +29,7 @@ import TimedChangeInput from './TimedChangeInput/TimedChangeInput';
 import NumericTimedChangeInput from './NumericTimedChangeInput/NumericTimedChangeInput';
 
 import { Input } from 'reactstrap';
-
+import NumericInput from 'react-numeric-input';
 var classNames = require('classnames');
 
 /**
@@ -108,10 +108,12 @@ class WickInput extends Component {
 
   renderNumeric = () => {
     return (
-      <NumericTimedChangeInput
-        {...this.props}
-        className={classNames("wick-numeric-input", this.props.className)}
-        ></NumericTimedChangeInput>
+      // Arrows are hidden within the WickInput css file.
+      <NumericInput {...this.props} 
+        style={{color:'red'}}
+        className={classNames("wick-numeric-input", this.props.className)}>
+        
+      </NumericInput>
     )
   }
 
